@@ -1,9 +1,18 @@
 import React, { useState } from "react";
-import { Button, ButtonGroup, Grid, GridItem, Show } from "@chakra-ui/react";
+import {
+  Button,
+  ButtonGroup,
+  Grid,
+  GridItem,
+  Show,
+  VStack,
+} from "@chakra-ui/react";
 import NavBar from "./Components/NavBar";
 import GameGrid from "./Components/GameGrid";
 import { GenreList } from "./Components/GenreList";
 import { Genre } from "./Hooks/useGenre";
+import PlatformSelector from "./Components/PlatformSelector";
+import "bootstrap/dist/css/bootstrap.css";
 
 const App = () => {
   const [selectedGenre, setSelectedGenre] = useState<Genre | null>(null);
@@ -27,6 +36,9 @@ const App = () => {
         </GridItem>
       </Show>
       <GridItem area="main">
+        <div className="mb-2">
+          <PlatformSelector />
+        </div>
         <GameGrid selectedGenre={selectedGenre} />
       </GridItem>
     </Grid>
