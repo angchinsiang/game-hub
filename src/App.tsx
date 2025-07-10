@@ -4,6 +4,7 @@ import {
   ButtonGroup,
   Grid,
   GridItem,
+  HStack,
   Show,
   VStack,
 } from "@chakra-ui/react";
@@ -14,6 +15,7 @@ import { Genre } from "./Hooks/useGenre";
 import PlatformSelector from "./Components/PlatformSelector";
 import "bootstrap/dist/css/bootstrap.css";
 import { Platform } from "./Hooks/usePlatforms";
+import SortSelector from "./Components/SortSelector";
 
 export interface Query {
   genre: Genre | null;
@@ -43,12 +45,15 @@ const App = () => {
       </Show>
       <GridItem area="main">
         <div className="mb-2">
-          <PlatformSelector
-            selectedPlatform={query.platform}
-            onSelectPlatform={(platform) => {
-              setQuery({ ...query, platform });
-            }}
-          />
+          <HStack spacing={5} marginBottom={4}>
+            <PlatformSelector
+              selectedPlatform={query.platform}
+              onSelectPlatform={(platform) => {
+                setQuery({ ...query, platform });
+              }}
+            />
+            <SortSelector />
+          </HStack>
         </div>
         <GameGrid query={query} />
       </GridItem>
