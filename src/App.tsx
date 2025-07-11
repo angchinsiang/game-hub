@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import {
+  Box,
   Button,
   ButtonGroup,
+  Flex,
   Grid,
   GridItem,
   HStack,
@@ -46,20 +48,22 @@ const App = () => {
       </Show>
       <GridItem area="main">
         <div className="mb-2">
-          <HStack spacing={5} marginBottom={4}>
-            <PlatformSelector
-              selectedPlatform={query.platform}
-              onSelectPlatform={(platform) => {
-                setQuery({ ...query, platform });
-              }}
-            />
+          <Flex marginBottom={4}>
+            <Box marginRight={5}>
+              <PlatformSelector
+                selectedPlatform={query.platform}
+                onSelectPlatform={(platform) => {
+                  setQuery({ ...query, platform });
+                }}
+              />
+            </Box>
             <SortSelector
               selectedOrder={query.order}
               onSetOrders={(order) => {
                 setQuery({ ...query, order });
               }}
             />
-          </HStack>
+          </Flex>
         </div>
         <GameGrid query={query} />
       </GridItem>
