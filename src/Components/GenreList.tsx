@@ -33,8 +33,8 @@ export const GenreList = ({ selectedGenre, setSelectedGenre }: Props) => {
               fontWeight={selectedGenre?.id === data.id ? "bold" : "normal"}
               color={selectedGenre?.id === data.id ? "yellow" : "white"}
               fontSize="lg"
-              whiteSpace="normal"
               textAlign="left"
+              whiteSpace="normal"
               variant="link"
               onClick={() => setSelectedGenre(data)}
             >
