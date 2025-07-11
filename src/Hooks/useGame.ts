@@ -27,6 +27,7 @@ const useGame = (query: Query) =>
         genres: query.genre?.id,
         platforms: query.platform?.id,
         ordering: query.order,
+        search: query.searchText,
       },
     },
     [query]

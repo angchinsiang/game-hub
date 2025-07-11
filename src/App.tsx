@@ -23,6 +23,7 @@ export interface Query {
   genre: Genre | null;
   platform: Platform | null;
   order: string;
+  searchText: string | undefined;
 }
 
 const App = () => {
@@ -34,7 +35,11 @@ const App = () => {
       templateColumns={{ base: "1fr", lg: "230px 1fr" }}
     >
       <GridItem area="nav">
-        <NavBar />
+        <NavBar
+          onSearch={(searchText) => {
+            setQuery({ ...query, searchText });
+          }}
+        />
       </GridItem>
       <Show above="lg">
         <GridItem area="aside" paddingX={2}>
