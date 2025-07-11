@@ -8,7 +8,7 @@ import { Platform } from "../Hooks/usePlatforms";
 import { Query } from "../App";
 
 interface Props {
-  query:Query
+  query: Query;
 }
 
 const GameGrid = ({ query }: Props) => {

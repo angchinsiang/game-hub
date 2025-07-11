@@ -8,11 +8,7 @@ const NavBar = ({ onSearch }: Props) => {
   return (
     <HStack padding="10px">
       <Image src={logo} boxSize="60px" />
-      <SearchBar
-        onSearch={(searchText) => {
-          onSearch(searchText);
-        }}
-      />
+      <SearchBar onSearch={onSearch} />
       <ColorModeSwitch />
     </HStack>
   );

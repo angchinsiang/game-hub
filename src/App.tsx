@@ -18,6 +18,7 @@ import PlatformSelector from "./Components/PlatformSelector";
 import "bootstrap/dist/css/bootstrap.css";
 import { Platform } from "./Hooks/usePlatforms";
 import SortSelector from "./Components/SortSelector";
+import GameHeading from "./Components/GameHeading";
 
 export interface Query {
   genre: Genre | null;
@@ -32,7 +33,7 @@ const App = () => {
   return (
     <Grid
       templateAreas={{ base: `"nav" "main"`, lg: `"nav nav" "aside main"` }}
-      templateColumns={{ base: "1fr", lg: "230px 1fr" }}
+      templateColumns={{ base: "1fr", lg: "250px 1fr" }}
     >
       <GridItem area="nav">
         <NavBar
@@ -52,7 +53,8 @@ const App = () => {
         </GridItem>
       </Show>
       <GridItem area="main">
-        <div className="mb-2">
+        <div className="mb-2 ">
+          <GameHeading gameQuery={query} />
           <Flex marginBottom={4}>
             <Box marginRight={5}>
               <PlatformSelector
