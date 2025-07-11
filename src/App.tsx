@@ -31,7 +31,7 @@ const App = () => {
   const [query, setQuery] = useState<Query>({} as Query);
 
   return (
-    <Grid
+    <Grid 
       templateAreas={{ base: `"nav" "main"`, lg: `"nav nav" "aside main"` }}
       templateColumns={{ base: "1fr", lg: "250px 1fr" }}
     >
@@ -42,8 +42,8 @@ const App = () => {
           }}
         />
       </GridItem>
-      <Show above="lg">
-        <GridItem area="aside">
+      <Show above="lg" >
+        <GridItem area="aside" margin={3} >
           <GenreList
             selectedGenre={query.genre}
             setSelectedGenre={(genre: Genre) => {

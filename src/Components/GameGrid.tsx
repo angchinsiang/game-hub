@@ -6,6 +6,7 @@ import GameContainer from "./GameContainer";
 import { Genre } from "../Hooks/useGenre";
 import { Platform } from "../Hooks/usePlatforms";
 import { Query } from "../App";
+import { ClassNames } from "@emotion/react";
 
 interface Props {
   query: Query;
@@ -17,11 +18,11 @@ const GameGrid = ({ query }: Props) => {
   return (
     <>
       {error && <Text>{error}</Text>}
-      <SimpleGrid columns={{ sm: 1, md: 2, lg: 3, xl: 5 }} spacing={3}>
+      <SimpleGrid columns={{ sm: 1, md: 2, lg: 3, xl: 4 }} spacing={6}>
         {isLoading &&
           skeletons.map((skeleton) => (
             <GameContainer key={skeleton}>
-              <GameCardSkeleton height={200} />
+              <GameCardSkeleton height={250} />
             </GameContainer>
           ))}
 

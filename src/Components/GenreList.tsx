@@ -22,7 +22,7 @@ export const GenreList = ({ selectedGenre, setSelectedGenre }: Props) => {
   if (isLoading)
     return (
       <GameContainer>
-        <GameCardSkeleton height={500} />
+        <GameCardSkeleton height={790} />
       </GameContainer>
     );
 
