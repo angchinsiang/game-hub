@@ -1,14 +1,10 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import {
   Box,
-  Button,
-  ButtonGroup,
   Flex,
   Grid,
   GridItem,
-  HStack,
   Show,
-  VStack,
 } from "@chakra-ui/react";
 import NavBar from "./Components/NavBar";
 import GameGrid from "./Components/GameGrid";
