@@ -1,4 +1,4 @@
-import { Input, InputGroup, InputLeftElement } from "@chakra-ui/react";
+import { Icon, Input, InputGroup, InputLeftElement } from "@chakra-ui/react";
 import React, { useRef } from "react";
 import { BsSearch } from "react-icons/bs";
 
@@ -16,7 +16,9 @@ const SearchBar = ({ onSearch }: Props) => {
       }}
     >
       <InputGroup>
-        <InputLeftElement children={<BsSearch />} />
+        <InputLeftElement>
+          <Icon as={BsSearch as React.ComponentType} color="gray.300" />
+        </InputLeftElement>
         <Input
           ref={ref}
           borderRadius={20}
